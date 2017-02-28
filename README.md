@@ -46,7 +46,7 @@ dependencies are required. Node will provide adequate output on errors to troubl
 - Navigate your browser to [http://localhost:8000/](http://localhost:8000/) to see the application
   running.
   
-This application is intended to run with the [https://github.com/jmitchell38488/loyaltycorptest](Loyalty Corp Laravel API REST) application. 
+This application is intended to run with the [Loyalty Corp Laravel API REST](https://github.com/jmitchell38488/loyaltycorptest) application. 
 Without the application installed and running on port 8001 (can be changed in `listRefService.ts`),
 the AngularJS won't be able to load any data. The application will fail gracefully and display a generic
 error message.
