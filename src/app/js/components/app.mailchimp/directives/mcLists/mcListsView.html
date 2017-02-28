@@ -7,7 +7,7 @@
                 <p ng-if="listController.error">{{ listController.error }}</p>
             </div>
             <ul ng-if="listController.mcList">
-                <li ng-repeat="list in listController.mcList">
+                <li ng-repeat="list in listController.mcList track by $index">
                     <a href="#!/lists/{{ list.id }}">{{ list.id }} - {{ list.name }}</a>
                 </li>
             </ul>

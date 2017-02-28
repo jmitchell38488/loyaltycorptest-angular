@@ -8,5 +8,7 @@
 /// <reference path='components/app.mailchimp/domain/ListModel.ts' />
 /// <reference path='components/app.mailchimp/directives/mcLists/mcListsController.ts' />
 /// <reference path='components/app.mailchimp/directives/mcListsDetails/mcListsDetailsController.ts' />
+/// <reference path='components/app.mailchimp/directives/mcListsMembers/mcListsMembersController.ts' />
 /// <reference path='components/app.mailchimp/services/listRefService.ts' />
+/// <reference path='components/app.mailchimp/services/membersRefService.ts' />
 /// <reference path='components/app.mailchimp/config/Config.ts' />

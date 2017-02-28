@@ -1,0 +1,13 @@
+<h3>List Members</h3>
+<div ng-if="!membersController.mcMembers && !membersController.error">
+    <p>Loading members list data from Mail Chimp server...</p>
+</div>
+<div ng-if="membersController.error">
+    <p>{{ membersController.error }}</p>
+</div>
+
+<ul ng-if="membersController.mcMembers">
+    <li ng-repeat="member in membersController.mcMembers">
+        <a href="#!/lists/{{ membersController.listId }}/members/{{ member.id }}">{{ list.id }} - {{ list.name }}</a>
+    </li>
+</ul>

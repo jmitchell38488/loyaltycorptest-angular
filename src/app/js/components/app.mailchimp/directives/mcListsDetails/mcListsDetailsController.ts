@@ -14,7 +14,10 @@ namespace app.mailchimp {
                     McListsDetailsController
                 ],
                 controllerAs: 'detailsController',
-                templateUrl: 'js/components/app.mailchimp/directives/mcListsDetails/mcListsDetailsView.html'
+                templateUrl: 'js/components/app.mailchimp/directives/mcListsDetails/mcListsDetailsView.html',
+                link: ($scope: ng.IScope, element: ng.IAugmentedJQuery, $attrs: ng.IAttributes, controller: McListsDetailsController) => {
+                    controller.fetch();
+                }
             }
         });
 
@@ -22,21 +25,20 @@ namespace app.mailchimp {
 
         public mcDetails: any;
         public error: string;
+        public listId: string;
 
         constructor(private $scope, private $routeParams, private listRefService: IListRefService) {
-            this.fetch();
+            this.listId = this.$routeParams.listid;
         }
 
         public fetch(): void {
             this.listRefService
-                .getList(this.$routeParams.listid)
+                .getList(this.listId)
                 .then((response: any) => {
                     if (!response.data.resource) {
                         this.error = 'Couldn\'t load for reason: no data returned, you need to add a list first, or check your API settings';
                         return;
                     }
-
-                    console.log(response.data.resource);
 
                     this.mcDetails = response.data.resource;
                 })
