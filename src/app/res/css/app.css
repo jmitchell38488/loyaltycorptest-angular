@@ -1,0 +1,228 @@
+
+
+body {
+    padding: 0px;
+    margin-top:55px;
+}
+
+.header {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    font-family: Arial,Helvetica,sans-serif;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    width: 100%;
+    text-align: left;
+    background-color: rgba(21,21,23,.95);
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+}
+
+.header .container {
+    min-width: 800px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 130px;
+    padding-right: 130px;
+}
+
+.header .logo a {
+    float: left;
+    margin: 13px 35px 0 0;
+    width: 66px;
+    display: block;
+    fill: #fff;
+    background: url(https://s.yimg.com/uy/build/images/sprites/general-79399b5f.png) 0 -61px no-repeat;
+    width: 72px;
+    height: 23px;
+    transition: opacity .15s ease-in-out;
+}
+
+h1 {
+    border-bottom: 1px solid gray;
+    margin-top: 0;
+}
+
+/* View: Phone list */
+.phones {
+    list-style: none;
+}
+
+.phones li {
+    clear: both;
+    height: 115px;
+    padding-top: 15px;
+}
+
+.title {
+    text-align:center;
+}
+
+.thumbnail {
+    display: block;
+    float: left;
+    margin: 2px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border: 0px none;
+}
+
+.thumb {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: 150%;
+}
+
+.thumb .overlay {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.thumb .overlay .title {
+    color: #fff;
+    font-size: 13px;
+}
+
+.thumbnail .animate {
+    max-width: 200px;
+}
+
+/* View: Phone detail */
+.phone {
+    background-color: white;
+    display: none;
+    float: left;
+    height: 400px;
+    margin-bottom: 2em;
+    margin-right: 3em;
+    padding: 2em;
+    width: 400px;
+    opacity: 0;
+}
+
+.phone:first-child {
+    display: block;
+    opacity: 1;
+}
+
+.phone-images {
+    background-color: white;
+    float: left;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    width: 450px;
+}
+
+.phone-thumbs {
+    list-style: none;
+    margin: 0;
+}
+
+.phone-thumbs img {
+    height: 100px;
+    padding: 1em;
+    width: 100px;
+}
+
+.phone-thumbs li {
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+    display: inline-block;
+    margin: 1em;
+}
+
+.specs {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.specs dt {
+    font-weight: bold;
+}
+
+.specs > li {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+
+.specs > li > span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.search-view {
+    padding-top: 11px;
+    display: block;
+}
+
+.search-view .input {
+    height: 25px;
+    padding-right: 30px;
+    display: block;
+    float:left;
+    background: url(../images/icon-search.png) no-repeat right center #fff;
+    width: 350px;
+}
+
+.search-view input {
+    min-width: 300px;
+    border: 0px;
+}
+
+
+@media(max-width: 800px) {
+    .header .container {
+        min-width:100%;
+        max-width:100%;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .thumbnail {
+        max-width: 45%;
+    }
+}
+
+@media(max-width: 500px) {
+    body {
+        margin-top: 90px;
+    }
+
+    .header {
+        height: 85px;
+    }
+
+    .header .logo a {
+        float: none;
+    }
+
+    .header .logo {
+        clear: both;
+    }
+
+    .thumbnail {
+        float: none;
+        width: 98%;
+        height: 250px;
+        max-width: 98%;
+    }
+}

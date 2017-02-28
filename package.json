@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "angular-mailchimp-test",
+  "version": "0.0.0",
+  "description": "Angular Mail Chimp Test application",
+  "main": "index.js",
+  "author": "Justin Mitchell",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "protractor": "^4.0.11",
+    "glob": "^7.1.1",
+    "html-minifier": "^3.3.3",
+    "jshint": "^2.9.4",
+    "lodash": "^4.16.2",
+    "ng-html2js": "^3.0.0",
+    "tsd": "^0.6.5",
+    "typescript": "^1.8.10"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm run build",
+    "start": "http-server ./build -a localhost -p 8000 -c-1 --cors",
+    "prebuild": "rm -rf build; mkdir -p build/{js,css}; cp -rf src/app/bower_components build/; cp src/app/index.html build/; cp -rf src/app/res/css build/",
+    "build": "tsc --sourcemap --out build/js/application.js src/app/js/_all.ts",
+    "postbuild": "node scripts/build/tsdev"
+  },
+  "dependencies": {
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2"
+  }
+}

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <p><a href="#!/lists">&lt; Back to lists</a></p>
+            <div ng-if="!detailsController.mcDetails">
+                <p>Loading list data from Mail Chimp server...</p>
+                <p ng-if="detailsController.error">{{ detailsController.error }}</p>
+            </div>
+            <ul ng-if="detailsController.mcDetails">
+                <li ng-repeat="(key, value) in detailsController.mcDetails">
+                    <ul ng-show="angular.isObject(value)">
+                        <ul ng-repeat="(i, v) in value">
+                            <span><strong>{{i}}</strong>: {{v}}</span>
+                        </ul>
+                    </ul>
+                    <span ng-show="!angular.isObject(row) && !angular.isArray(row)"><strong>{{key}}</strong>: {{value}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

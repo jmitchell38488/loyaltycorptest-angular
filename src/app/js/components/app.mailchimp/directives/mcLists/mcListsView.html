@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div ng-if="!listController.mcList">
+                <p>Loading list data from Mail Chimp server...</p>
+                <p ng-if="listController.error">{{ listController.error }}</p>
+            </div>
+            <ul ng-if="listController.mcList">
+                <li ng-repeat="list in listController.mcList">
+                    <a href="#!/lists/{{ list.id }}">{{ list.id }} - {{ list.name }}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
